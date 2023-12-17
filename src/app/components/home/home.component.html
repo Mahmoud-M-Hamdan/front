@@ -1,0 +1,14 @@
+<div class="heroSec">
+  <div class="overlay" *ngIf="httpSer.isLoading | async"></div>
+  <app-spinner class="spinner" *ngIf="httpSer.isLoading | async"></app-spinner>
+  <p *ngIf="!(httpSer.isLoading | async)" class="heroText">Art Gram</p>
+  <app-photo-upload *ngIf="httpSer.token | async"></app-photo-upload>
+</div>
+<div class="cont">
+
+  <Section class="pics" *ngIf="httpSer.token | async">
+    <div class="imgCon" *ngFor="let imag of photoService.arr | async">
+      <img src="{{ imag.url }}" alt="" />
+    </div>
+  </Section>
+</div>

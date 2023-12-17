@@ -1,0 +1,2 @@
+<label  *ngIf="!(httpser.isLoading |async)" class="form-label" for="customFile" style="color: white;font-size: 36px;">Add You Photo <i class="bi bi-cloud-arrow-up"></i></label>
+<input  *ngIf="!(httpser.isLoading |async)" (change)="onFileSelected($event)"  [disabled]="httpser.isLoading|async"  type="file"type="file" class="form-control" id="customFile" />

@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg bg-dark mmm" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/" class="title">ArtGram</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarColor02"
+      aria-controls="navbarColor02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/heroes"
+            >Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/heroes">Favourites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/heroes">My Arts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/heroes">Your Profile</a>
+        </li>
+      </ul>
+      <form class="d-flex" #loginForm="ngForm" (submit)="onLogin(loginForm)" *ngIf="!(httpSer.token|async)">
+        <input
+          class="form-control me-sm-2"
+          type="text"
+          placeholder="Username"
+          ngModel
+          name="username"
+        />
+        <input
+          class="form-control me-sm-2"
+          type="password"
+          placeholder="Password"
+          ngModel
+          name="password"
+        />
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+          Login
+        </button>
+      </form>
+      <!-- <div class="imgcon"> -->
+  
+        <img  [src]="httpSer.user?.photoUrl"alt="" class="imeg" style="height: 50px;width: 50px;border: 4px solid white; border-radius: 50%;margin-right: 15px;" *ngIf="httpSer.token |async">
+      <!-- </div> -->
+      <button class="btn btn-danger my-2 my-sm-0" type="button" (click)="logout()" *ngIf="httpSer.token |async">
+        Logout
+      </button>
+
+    </div>
+  </div>
+</nav>

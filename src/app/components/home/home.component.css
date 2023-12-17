@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Rubik+Dirt&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+}
+
+.heroSec {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.61)),
+    url(https://i.pinimg.com/originals/5f/34/a5/5f34a5216b0abad545ae44713c93e997.jpg);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroText {
+  font-family: "Caveat";
+  font-size: 100px;
+  color: white;
+}
+
+.pics {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cont {
+  width: 80vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.imgCon {
+  margin: 50px;
+}
+
+.overlay {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lobster&display=swap');
+
+.title{
+   font-family: Lobster; 
+   font-size: 36px;
+   text-decoration: none;
+ /* text-align: center; */
+}
+.mmm{
+    height: 80px;
+    margin-bottom: -80px;
+}
